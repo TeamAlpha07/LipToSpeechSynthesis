@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Upload a File</title>
+        <style>
+          body{
+            background: #CCCCCC;
+            position: relative;
+          }
+          .theURLsec {
+            text-align: center;
+            font-size: 30px;
+            border: 5px solid #000000;
+            margin: auto;
+            width: 50%;
+            position: absolute;
+            top: 200px;
+            left: 25%;
+          }
+          li span {
+  position: relative;
+  left: -100px;
+}
+        </style>
+
+    </head>
+    <body>
+        <!-- <h1>Upload new File</h1>
+        <form method=post enctype=multipart/form-data>
+          <input type=file name=file>
+          <input type=submit value=Upload>
+        </form> -->
+        <table>
+          <tr>
+            <td>
+              <div class="theURLsec">
+                  <h3>
+                      Upload a video file
+                  </h3>
+                  <form method=post enctype=multipart/form-data>
+                    <input type=file name=file style="height: 50px;">
+                    <input type=submit value=Upload style="height: 30px;">
+                    </form>
+                    Did you say: {{ transcription }}<br>
+                  <a href="{{  url_for('download', filename=file) }}" target="_blank"> go to /download?filename= to download the video file </a>
+              </div>
+            </td>
+
+            <td>
+              <!-- <div class="theURLsec" style="top: 450px;">
+                Sri Sairam college of Engineering
+    
+              </div> -->
+            </td>
+          </tr>
+        </table>
+
+
+        <script>
+          function redirectTo(){
+
+            let redirectURL = document.getElementById('url').value;
+            location.replace(redirectURL)            
+          }
+        </script>
+    </body>
+</html>
+
+<!-- <!doctype html>
+    <title>Upload new File</title>
+    <h1>Upload new File</h1>
+    <form method=post enctype=multipart/form-data>
+      <input type=file name=file>
+      <input type=submit value=Upload>
+    </form>-->
